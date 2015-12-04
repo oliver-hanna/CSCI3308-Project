@@ -20,20 +20,30 @@
 				width: 100%;
 				height: 500px;
 			}
+			#mapOptions{
+				width: 100px;
+				height: 500px;
+			}
 		</style>
 
 	</head>
 
 	<body>
 		<div id="map" class="col-md-6"></div>
- 
+ 		<label class="radio-inline"><input type="radio" name="optradio">Monday</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Tuesday</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Wednesday</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Thursday</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Friday</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Saturday</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Sunday</label>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script>  
- 		var counter = 1000
+		var counter = 1000
 		function init_map() {
 			counter++
 			console.log(counter)
@@ -49,7 +59,7 @@
 				position: var_location,
 				map: var_map,
 				title:"Boulder"});
-	 		*/
+			*/
 			var var_map = new google.maps.Map(document.getElementById("map"),
 				var_mapoptions);
 	 
@@ -80,7 +90,6 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
-
 		<div class="container">
 
 			<div class="starter-template">
