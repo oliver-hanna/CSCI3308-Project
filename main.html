@@ -33,8 +33,10 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script>  
- 
+ 		var counter = 1000
 		function init_map() {
+			counter++
+			console.log(counter)
 			var var_location = new google.maps.LatLng(40.007461, -105.270749);
 	 
 			var var_mapoptions = {
@@ -87,10 +89,6 @@
 			</div>
 
 		</div><!-- /.container -->
-
-
-		<!-- Bootstrap core JavaScript
-		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<!-- Latest compiled and minified CSS -->
