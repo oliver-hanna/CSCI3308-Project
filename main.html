@@ -17,26 +17,48 @@
 
 		<style>
 			#map {
-				width: 100%;
+				left:200px;
+				right:150px;
+				width: 68%;
 				height: 500px;
 			}
-			#mapOptions{
-				width: 100px;
-				height: 500px;
+			#dayOfTheWeek{
+				position: absolute;
+				width: 200px;
+				height: 440px;
+				right:0px;
+				top:60px;
+			}
+			#parkingInfoBox{
+				position: absolute;
+				width: 150px;
+				height: 440px;
+				left:0px;
+				top:60px;
 			}
 		</style>
 
 	</head>
 
 	<body>
-		<div id="map" class="col-md-6"></div>
- 		<label class="radio-inline"><input type="radio" name="optradio">Monday</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Tuesday</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Wednesday</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Thursday</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Friday</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Saturday</label>
-		<label class="radio-inline"><input type="radio" name="optradio">Sunday</label>
+		<div id = 'container'>
+			<div class = 'row'>
+				<div id="map" class="col-md-6"></div>
+				<div id = 'parkingInfoBox' class = 'col-md-3'>
+					<label>Parking Lot Info</label>
+				</div>
+				<div id = 'dayOfTheWeek' class = 'col-md-3'>
+					<label>Day</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Monday</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Tuesday</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Wednesday</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Thursday</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Friday</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Saturday</label>
+					<label class="radio-inline"><input type="radio" name="optradio">Sunday</label>
+				</div>
+			</div>
+		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
