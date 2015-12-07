@@ -14,7 +14,7 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
+		<!-- Custom CSS -->
 		<style>
 			#map {
 				height: 600px;
@@ -34,6 +34,7 @@
 		</style>
 	</head>
 	<body>
+		<!-- Set up day of the week selection area -->
 		<div id = 'container-fluid'>
 			<div class = 'row'>
 				<div id = 'dayOfTheWeek' class = 'col-lg-1'>
@@ -55,11 +56,11 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script>  
-		var counter = 1000
+		//var counter = 1000
 		var var_map
 		var boulder = { lat: 40.007461, lng: -105.270749 }
 		
-		
+		//Set up Map
 		function init_map() {
 			counter++
 			console.log(counter)
@@ -89,6 +90,7 @@
 			var boulder = { lat: 40.007461, lng: -105.270749 }
 			*/
 
+		/*Build markers on map*/
 		function addMarker(location, map, hours, price, p4hours, holiday) {
 			var contentString = '<div id = "parkingInfoBox" class = "col-lg-2">'+
 					'<label>Parking Lot Info</label>'+
@@ -126,7 +128,7 @@
 		google.maps.event.addDomListener(window, 'load', init_map);
 
 		</script>
-
+		<!-- Set up Navbar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -147,12 +149,14 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
+		<!-- Make navbar buttons responsive -->
 		<script>
 			$('#map').on('click', function(event){
 				$('html, body').animate({
 			        scrollTop: $("#elementtoScrollToID").offset().top
 			    }, 2000);
 			})
+			/*
 			$('#about').on('click', function(event){
 				console.log('about clicked')
 			})
@@ -162,6 +166,7 @@
 			        scrollTop: $("#contactBox").offset().top
 			    }, 2000);
 			})
+			*/
 		</script>
 		<div class="container">
 

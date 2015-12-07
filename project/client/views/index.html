@@ -14,7 +14,7 @@
 
 		<!-- Bootstrap core CSS -->
 		<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
+		<!-- Custom CSS-->
 		<style>
 			#map {
 				height: 600px;
@@ -56,6 +56,7 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script>
+			//fetch server side data
 			var garageData;
 			$.ajax({
 				type: 'GET',
@@ -78,15 +79,16 @@
 					console.log(data);
 				}
 			})
+		//Set up initial screen
 		$('input:radio[name=weekday]:nth(0)').attr('checked',true);
 		$( document ).load(function() {
 		    for(i = 0; i < garageData.length; i++){	
 				var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-				addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+				addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 			for(i = 0; i < lotData.length; i++){	
 				var location = { lat: lotData[i].latitude, lng: lotData[i].longitude }
-				addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
+				addMarker(location, var_map, lotData[i].opentime + "-" + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
 			}
 		});
 		/*
@@ -99,78 +101,79 @@
 				addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
 		}
 		*/
+		//make radio buttons responsive to change
 		$('#update').click(function(event){
 			if($('input[name=weekday]:checked').val() == 1){
 				console.log('monday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 				for(i = 0; i < lotData.length; i++){	
 					var location = { lat: lotData[i].latitude, lng: lotData[i].longitude }
-					addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
+					addMarker(location, var_map, lotData[i].opentime + "-" + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
 				}
 			}
 			else if($('input[name=weekday]:checked').val() == 2){
 				console.log('tuesday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 				for(i = 0; i < lotData.length; i++){	
 					var location = { lat: lotData[i].latitude, lng: lotData[i].longitude }
-					addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
+					addMarker(location, var_map, lotData[i].opentime + "-" + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
 				}
 			}
 			else if($('input[name=weekday]:checked').val() == 3){
 				console.log('Wednesday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 				for(i = 0; i < lotData.length; i++){	
 					var location = { lat: lotData[i].latitude, lng: lotData[i].longitude }
-					addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
+					addMarker(location, var_map, lotData[i].opentime + "-" + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
 				}
 			}
 			else if($('input[name=weekday]:checked').val() == 4){
 				console.log('Thursday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 			}
 			else if($('input[name=weekday]:checked').val() == 5){
 				console.log('Friday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 			}
 			else if($('input[name=weekday]:checked').val() == 6){
 				console.log('Saturday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 			}
 			else if($('input[name=weekday]:checked').val() == 7){
 				console.log('Sunday has been chosen');
 				for(i = 0; i < garageData.length; i++){	
 					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
-					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+					addMarker(location, var_map, garageData[i].opentime + "-" + garageData[i].thufriclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
 				}
 				for(i = 0; i < lotData.length; i++){	
 					var location = { lat: lotData[i].latitude, lng: lotData[i].longitude }
-					addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
+					addMarker(location, var_map, lotData[i].opentime + "-" + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
 				}
 			}
 		});
-		var counter = 1000
+		//var counter = 1000
 		var var_map
 		var boulder = { lat: 40.007461, lng: -105.270749 }
 		
-		
+		//set up map
 		function init_map() {
 			counter++
 			console.log(counter)
@@ -199,7 +202,7 @@
 			location passed in below format/variable
 			var boulder = { lat: 40.007461, lng: -105.270749 }
 			*/
-
+		//Layer markers on map
 		function addMarker(location, map, hours, price, p4hours, holiday) {
 			var contentString = '<div id = "parkingInfoBox" class = "col-lg-2">'+
 					'<label>Parking Lot Info</label>'+
@@ -237,7 +240,7 @@
 		google.maps.event.addDomListener(window, 'load', init_map);
 
 		</script>
-
+		<!-- set up navbar  -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -256,12 +259,14 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
+		<!-- Make navbar buttons responsive -->
 		<script>
 			$('#map').on('click', function(event){
 				$('html, body').animate({
 					scrollTop: $("#elementtoScrollToID").offset().top
 				}, 2000);
 			})
+			/*
 			$('#about').on('click', function(event){
 				console.log('about clicked')
 			})
@@ -270,7 +275,7 @@
 				$('html, body').animate({
 					scrollTop: $("#contactBox").offset().top
 				}, 2000);
-			})
+			})*/
 		</script>
 		<div class="container">
 
@@ -283,7 +288,7 @@
 		<body>
 			<div '#contactBox' style="text-align: center; margin:0 auto;">
 				<h2>Contact Us</h2>
-				<body>You can reach us at wedonthavenaemailforthis@yourmother.com</body>
+				<body>You can reach us at contact@synergisticparkingsolutions.com</body>
 			</div>
 		</body>
 		<!-- Placed at the end of the document so the pages load faster -->
