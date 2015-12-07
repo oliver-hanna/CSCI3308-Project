@@ -66,10 +66,14 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script>  
 		var counter = 1000
+		var var_map
+		var boulder = { lat: 40.007461, lng: -105.270749 }
+		
+		
 		function init_map() {
 			counter++
 			console.log(counter)
-			var boulder = { lat: 40.007461, lng: -105.270749 }
+			
 			var var_location = new google.maps.LatLng(40.007461, -105.270749);
 	 
 			var var_mapoptions = {
@@ -77,28 +81,22 @@
 				zoom: 14
 			};
 
-			/*
-			var var_marker = new google.maps.Marker({
-				position: var_location,
-				map: var_map,
-				title:"Boulder"});
-			*/
 
+			var contentString = '<div id ="content">'+
+			'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+			'</div>';
 			
-			var var_map = new google.maps.Map(document.getElementById("map"),
+			var_map = new google.maps.Map(document.getElementById("map"),
 				var_mapoptions);
-
-			addMarker(boulder, var_map);
-/*		google.maps.event.addListener(var_map, 'click', function(event) {
-				addMarker(event.latLng, map, "test");
-			}*/
-			//var_marker.setMap(var_map); 
+				
 		}
-
+		
+		
 		function addMarker(location, map) {
 			var marker = new google.maps.Marker({
 				position: location,
 				map: map,
+				title: "test"
 			});
 		}
 
