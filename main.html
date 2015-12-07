@@ -18,6 +18,7 @@
 		<style>
 			#map {
 				height: 600px;
+				left: 2%;
 			}
 			#dayOfTheWeek{
 				height: 440px;
@@ -36,23 +37,7 @@
 	<body>
 		<div id = 'container-fluid'>
 			<div class = 'row'>
-				<div id = 'parkingInfoBox' class = 'col-lg-2'>
-					<label>Parking Lot Info</label>
-					<div class = 'row'>
-						<label>Hours:</label>
-					</div>
-					<div class = 'row'>
-						<label>Price:</label>
-					</div>
-					<div class = 'row'>
-						<label>Price after 4 hours:</label>
-					</div>
-					<div class = 'row'>
-						<label>Holiday Price:</label>
-					</div>
-				</div>
-				<div id="map" class="col-lg-8"></div>
-				<div id = 'dayOfTheWeek' class = 'col-lg-2'>
+				<div id = 'dayOfTheWeek' class = 'col-lg-1'>
 					<label>Day</label>
 					<label class="radio"><input type="radio" name="optradio">Monday</label>
 					<label class="radio"><input type="radio" name="optradio">Tuesday</label>
@@ -62,6 +47,7 @@
 					<label class="radio"><input type="radio" name="optradio">Saturday</label>
 					<label class="radio"><input type="radio" name="optradio">Sunday</label>
 				</div>
+				<div id="map" class="col-lg-11"></div>
 			</div>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
