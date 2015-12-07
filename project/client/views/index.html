@@ -45,7 +45,7 @@
 					<label class="radio"><input type="radio" name="weekday" value = "5">Friday</label>
 					<label class="radio"><input type="radio" name="weekday" value = "6">Saturday</label>
 					<label class="radio"><input type="radio" name="weekday" value = "7">Sunday</label>
-					<button type="button" class="btn btn-default" href = "#update">Update</button>
+					<button type="button" class="btn btn-default" id = "update" href = "#">Update</button>
 				</div>
 				<div id="map" class="col-lg-11"></div>
 			</div>
@@ -74,17 +74,42 @@
 				contentType: 'application/json',
 				dataType: 'json',
 				success: function(data){
-					garageData = data;
+					lotData = data;
 					console.log(data);
 				}
 			})
 		$('input:radio[name=weekday]:nth(0)').attr('checked',true);
-		if($('input[name=weekday]:checked').val() == 1){
-			console.log('monday has been chosen');
-		}
-		else if($('input[name=weekday]:checked').val() == 2){
-			console.log('tuesday has been chosen');
-		}
+		$('#update').click(function(event){
+			if($('input[name=weekday]:checked').val() == 1){
+				console.log('monday has been chosen');
+				for(i = 0; i < garageData.length; i++){	
+					var location = { lat: garageData[i].latitude, lng: garageData[i].longitude }
+					addMarker(location, var_map, garageData[i].opentime + " " + garageData[i].montuewedclosetime, garageData[i].price, garageData[i].after4hoursprice, garageData[i].weekendholidayprice)
+				}
+				for(i = 0; i < lotData.length; i++){	
+					var location = { lat: lotData[i].latitude, lng: lotData[i].longitude }
+					addMarker(location, var_map, lotData[i].opentime + " " + lotData[i].closetime, lotData[i].price, "N/A", lotData[i].nightsundayholidayprice)
+				}
+			}
+			else if($('input[name=weekday]:checked').val() == 2){
+				console.log('tuesday has been chosen');
+			}
+			else if($('input[name=weekday]:checked').val() == 3){
+				console.log('Wednesday has been chosen');
+			}
+			else if($('input[name=weekday]:checked').val() == 4){
+				console.log('Thursday has been chosen');
+			}
+			else if($('input[name=weekday]:checked').val() == 5){
+				console.log('Friday has been chosen');
+			}
+			else if($('input[name=weekday]:checked').val() == 6){
+				console.log('Saturday has been chosen');
+			}
+			else if($('input[name=weekday]:checked').val() == 7){
+				console.log('Sunday has been chosen');
+			}
+		});
 		var counter = 1000
 		var var_map
 		var boulder = { lat: 40.007461, lng: -105.270749 }
@@ -207,9 +232,6 @@
 				<body>You can reach us at wedonthavenaemailforthis@yourmother.com</body>
 			</div>
 		</body>
-		<script>
-		$.('#contact')
-		</script>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<!-- Latest compiled and minified CSS -->

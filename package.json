@@ -1,8 +1,14 @@
 {
-	"dependencies":
-	{
-		"bootstrap": "*",
+	"scripts": {
+		"start": "supervisor ./bin/www"
+	},
+    "dependencies": {
 		"angular": "*",
-		"jquery": "*"
-	}
+		"bootstrap": "*",
+		"jquery": "*",
+		"pg": "4.4.3",
+		"express": "*",
+		"express-generator": "*",
+		"supervisor": "*"
+  }
 }

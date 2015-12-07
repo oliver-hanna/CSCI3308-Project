@@ -11,7 +11,7 @@ Spaces int(1) NOT NULL,
 Latitude float NOT NULL,
 Longitude float NOT NULL,
 PRIMARY KEY (Id)
-) ENGINE=MyISAM Default CHARSET=utf8 AUTO_INCREMENT=6 ;
+);
 
 INSERT INTO Garages (Id, Streets, Price, After4HoursPrice, WeekendHolidayPrice, OpenTime, MonTueWedCloseTime, ThuFriCloseTime, Spaces, Latitude, Longitude) VALUES
 (1, '11th and Walnut', 1.25, 2.50, 0.00, '9am', '11pm', '2am', 250, 40.0163, -105.2805),
