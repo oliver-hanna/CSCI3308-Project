@@ -27,7 +27,7 @@
 				top:60px;
 			}
 			#parkingInfoBox{
-				height: 440px;
+				height: 300px;
 				left: 2%;
 				top:60px;
 			}
@@ -80,12 +80,16 @@
 			var_map = new google.maps.Map(document.getElementById("map"),
 				var_mapoptions);
 
-			addMarker(boulder, var_map);
+			addMarker(boulder, var_map, "1-2", "1", "2", "3");
 				
 		}
 		
 
-		
+			/*
+			location passed in below format/variable
+			var boulder = { lat: 40.007461, lng: -105.270749 }
+			*/
+
 		function addMarker(location, map, hours, price, p4hours, holiday) {
 			var contentString = '<div id = "parkingInfoBox" class = "col-lg-2">'+
 					'<label>Parking Lot Info</label>'+
