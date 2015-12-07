@@ -93,18 +93,47 @@
 			
 			var_map = new google.maps.Map(document.getElementById("map"),
 				var_mapoptions);
+
+			addMarker(boulder, var_map);
 				
 		}
 		
+
 		
-		function addMarker(location, map) {
+		function addMarker(location, map, hours, price, p4hours, holiday) {
+			var contentString = '<div id = "parkingInfoBox" class = "col-lg-2">'+
+					'<label>Parking Lot Info</label>'+
+					'<div class = "row">'+
+						'<label>Hours: </label>'+hours+
+					'</div>'+
+					'<div class = "row">'+
+						'<label>Price: </label>'+price+
+					'</div>'+
+					'<div class = "row">'+
+						'<label>Price after 4 hours: </label>'+p4hours+
+					'</div>'+
+					'<div class = "row">'+
+						'<label>Holiday Price: </label>'+holiday+
+					'</div>'+
+				'</div>';
+
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+
 			var marker = new google.maps.Marker({
 				position: location,
 				map: map,
 				title: "test"
 			});
+
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
 		}
 
+		
 		google.maps.event.addDomListener(window, 'load', init_map);
 
 		</script>
